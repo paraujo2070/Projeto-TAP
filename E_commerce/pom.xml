@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.ecommerce</groupId>
+	<artifactId>E_commerce</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+
+	<!-- Codificação dos caracteres -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- Parâmetros de execução -->
+	<build>
+		<!-- Nome do projeto empacotado -->
+		<finalName>E_commerce</finalName>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources/CATALINA_HOME/conf</directory>
+				<excludes>
+					<exclude>log4j.properties</exclude>
+					<exclude>jpa_stocks.properties</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/WEB-INF/META-INF</directory>
+				<targetPath>META-INF</targetPath>
+				<includes>
+					<include>persistence.xml</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<!-- Plugins -->
+		<plugins>
+			<!-- Compilador -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Dependências -->
+    <repositories>
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
+    <dependencies>
+		<!-- Hibernate Core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
+
+
+<!-- Dependências -->
+<!-- <dependencies> -->
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<!-- <dependency> -->
+<!-- <groupId>org.hibernate</groupId> <artifactId>hibernate-core</artifactId> 
+	<version>5.2.12.Final</version> </dependency> -->
+
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-entitymanager</artifactId> 
+	<version>5.2.12.Final</version> </dependency> -->
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+	<version>6.0.6</version> </dependency> </dependencies> </project> -->
